@@ -20,11 +20,13 @@ exports.init = (req, res) => {
   let bigqueryTableID;
   let firestoreCollection;
   let columnName;
+  let tableLocation;
 
-  if(req.body.bigqueryTableID && req.body.firestoreCollection && req.body.columnName){
+  if(req.body.bigqueryTableID && req.body.firestoreCollection && req.body.columnName && req.body.tableLocation){
     bigqueryTableID = req.body.bigqueryTableID;
     firestoreCollection = req.body.firestoreCollection;
     columnName = req.body.columnName;
+    tableLocation = req.body.location;
     transferData();
     
   }
@@ -44,7 +46,7 @@ exports.init = (req, res) => {
     const bigQueryOptions = {
       query: query,
       // Location must match that of the dataset(s) referenced in the query.
-      location: 'US',
+      location: tableLocation,
     };
 
     // Run the query as a job
