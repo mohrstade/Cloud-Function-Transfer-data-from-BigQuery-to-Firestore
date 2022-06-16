@@ -6,11 +6,12 @@ Code for a Cloud Function in NodeJS to transfer data from BigQuery to Firestore.
 ```javascript
 {
 "bigqueryTableID": "yourBigQueryProject.yourDataset.yourTable",
+"tableLocation:"EU"
 "firestoreCollection":"theFirestoreCollectionName",
 "columnName":"documentID"
 }
 ```
-You need to specify the BigQuery TableID where data is taken from, the Firestore Collection name where data is sent to and the documentID which will be used as unique identifier for the different Firestore documents.
+You need to specify the BigQuery TableID and location where data is taken from, the Firestore Collection name where data is sent to and the documentID which will be used as unique identifier for the different Firestore documents.
 Every row in the BigQuery table will be put in one document in Firestore where the document name is one choosen field of the BigQuery table named columnName in the JSON Object.
 
 <h2>How to setup it up</h2>
