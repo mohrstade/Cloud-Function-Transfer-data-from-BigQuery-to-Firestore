@@ -6,7 +6,7 @@ Code for a Cloud Function in NodeJS to transfer data from BigQuery to Firestore.
 ```javascript
 {
 "bigqueryTableID": "yourBigQueryProject.yourDataset.yourTable",
-"tableLocation:"EU"
+"tableLocation:"EU",
 "firestoreCollection":"theFirestoreCollectionName",
 "columnName":"documentID"
 }
