@@ -1,8 +1,5 @@
 /**
  * Responds to any HTTP request.
- *
- * @param {!express:Request} req HTTP request context.
- * @param {!express:Response} res HTTP response context.
  */
 
 
@@ -14,9 +11,10 @@ const {BigQuery} = require('@google-cloud/bigquery');
 const bigquery = new BigQuery();
 const {Firestore} = require('@google-cloud/firestore');
 const firestore = new Firestore();
+const functions = require('@google-cloud/functions-framework');
 
 
-exports.init = (req, res) => {
+functions.http('transferData', (req, res) => {
   let bigqueryTableID;
   let firestoreCollection;
   let columnName;
@@ -71,4 +69,4 @@ exports.init = (req, res) => {
     });
     return res.status(200).json({"success":"true","message":"complete"});
   }
-};
+});

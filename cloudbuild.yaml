@@ -1,0 +1,14 @@
+steps:
+- name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+  args:
+  - gcloud
+  - functions
+  - deploy
+  - bigquery-to-firestore
+  - --region=europe-west3
+  - --source=.
+  - --trigger-http
+  - --runtime=nodejs16
+  - --entry-point=transferData
+  - --service-account=cd-bigquery-to-firestore@artful-shelter-265814.iam.gserviceaccount.com
+  - --allow-unauthenticated

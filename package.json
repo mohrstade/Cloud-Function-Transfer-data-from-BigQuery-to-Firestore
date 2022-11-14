@@ -1,0 +1,26 @@
+{
+  "name": "cloud-function-transfer-data-from-bigquery-to-firestore",
+  "version": "1.0.0",
+  "description": "<h2>Intro</h2> Code for a Cloud Function in NodeJS to transfer data from BigQuery to Firestore.In case documents allready exist with the same documentID the will be overwritten /updated. The Cloud Function needs a JSON object with three parameters to work accordingly:",
+  "main": "transferData.js",
+  "scripts": {
+    "start": "functions-framework --target=transferData --signature-type=http",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohrstade/Cloud-Function-Transfer-data-from-BigQuery-to-Firestore.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohrstade/Cloud-Function-Transfer-data-from-BigQuery-to-Firestore/issues"
+  },
+  "homepage": "https://github.com/mohrstade/Cloud-Function-Transfer-data-from-BigQuery-to-Firestore#readme",
+  "dependencies": {
+    "@google-cloud/bigquery": "^6.0.3",
+    "@google-cloud/firestore": "^6.4.1",
+    "@google-cloud/functions": "^2.2.3",
+    "@google-cloud/functions-framework": "^3.1.2"
+  }
+}
